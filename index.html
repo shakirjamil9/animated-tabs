@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 60vh;
+            width: 100%;
+            background: linear-gradient(to left, red,blue);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .tabs {
+            /* border: 1px solid yellow; */
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 2%;
+        }
+
+        .tab-list {
+            /* border: 1px solid grey; */
+            text-align: center;
+        }
+
+        .tab-content {
+            /* border: 1px solid green; */
+            color: peachpuff;
+            padding: 20px;
+            letter-spacing: 2px;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: papayawhip;
+            font-size: 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            background: linear-gradient(to bottom, silver,blue);
+            width: 8vw;
+            text-align: center;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30vh;
+            letter-spacing: 2px;
+            color: linen;
+        }
+        #one{
+            animation: first 1s 1 forwards linear;
+        }
+        @keyframes first{
+            0%{transform: scale(0.5);}
+            100%{transform: scale(1);}
+        }
+        #two{
+            animation: second 1s 1 forwards linear;
+            opacity: 0;
+        }
+        @keyframes second{
+            100%{opacity: 1;}
+        }
+        #three{
+            animation: third 0.5s 1 forwards ease;
+        }
+        @keyframes third{
+            90%{transform: skew(100deg);}
+            100%{transform: skew(0deg);}
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tabs</h1>
+    <div class="tabs">
+        <nav class="tab-list">
+            <a class="tab active" href="#one" onclick="show()">One</a>
+            <a class="tab" href="#two" onclick="showTwo()">Two</a>
+            <a class="tab" href="#three" onclick="showThree()">Three</a>
+        </nav>
+
+        <div id="one" class="tab-content show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, esse fuga
+            quos saepe hic perspiciatis omnis nemo libero tempore obcaecati dolores laborum nisi officiis enim, a quis
+            ipsum excepturi dicta.</div>
+        <div id="two" class="tab-content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, sint?
+            Quaerat, officia laboriosam. Quae nam commodi possimus in asperiores natus dolor illo debitis beatae?
+            Inventore ipsa exercitationem esse nobis alias?</div>
+        <div id="three" class="tab-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum ducimus fugit
+            aliquam magni quo exercitationem temporibus facere quos ipsum incidunt blanditiis earum excepturi quam sed
+            reiciendis, facilis consequuntur sunt possimus?</div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        function show(){
+            $('.tab-content').hide();
+            $('#one').show();
+        }
+
+        function showTwo(){
+            $('.tab-content').hide();
+            $('#two').show();
+        }
+
+        function showThree(){
+            $('.tab-content').hide();
+            $('#three').show();
+        }
+    </script>
+</body>
+
+</html>
